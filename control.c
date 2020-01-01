@@ -27,7 +27,9 @@ int main (int argc, char *argv[]) {
     //semaphore
     int semd;
     int v, r;
-    char input[3];
+
+    //file
+    int file;
 
     if (argc == 1) {
         printf("missing flag\n");
@@ -57,15 +59,23 @@ int main (int argc, char *argv[]) {
                 r = semctl(semd, 0, SETVAL, us);
                 printf("semctl returned: %d\n", r);
             }
+
+            //make file
+            file = open("story",O_TRUNC | O_CREAT | O_RDWR, 0644);
         }
 
         else if (strcmp(argv[1],"-v") == 0) {
-            printf("detects -v\n");
+            printf("The story so far:\n");
+
         }
 
         else if (strcmp(argv[1],"-r") == 0) {
+
+            //remove shared memory
+            shmctl(shmd, IPC_RMID, 0);
+
+            //remove semaphore
             semctl(semd, IPC_RMID, 0);
-            printf("segment deleted\n");
         }
 
         else {
