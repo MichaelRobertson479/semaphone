@@ -12,9 +12,6 @@
 
 int main() {
 
-  //int file = open("story",O_WRONLY | O_APPEND);
-  printf("gets here\n");
-  
   int semd;
   int r;
   int v;
