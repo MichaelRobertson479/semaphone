@@ -6,6 +6,7 @@
 #include <sys/sem.h>
 #include <sys/types.h>
 #include <errno.h>
+#include <fcntl.h>
 
 #define KEY 24601
 
