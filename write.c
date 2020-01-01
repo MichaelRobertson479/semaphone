@@ -33,7 +33,7 @@ int main() {
 
   //write new line
   printf("Your addition: ");
-  dup2(file,STDOUT_FILENO);
+  //dup2(file,STDOUT_FILENO);
   sleep(10);
 
   sb.sem_op = 1;
