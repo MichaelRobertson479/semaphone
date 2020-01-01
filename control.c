@@ -13,7 +13,8 @@ union semun {
   int              val;    /* Value for SETVAL */
   struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
   unsigned short  *array;  /* Array for GETALL, SETALL */
-  struct seminfo  *__buf;  /* Buffer for IPC_INFO */
+  struct seminfo  *__buf;  /* Buffer for IPC_INFO
+                              (Linux-specific) */
 };
 
 #define KEY 24601
@@ -62,7 +63,7 @@ int main (int argc, char *argv[]) {
             }
 
             //make file
-            file = open("story",O_TRUNC | O_CREAT | O_RDWR, 0644);
+            file = open("story",O_TRUNC | O_CREAT | O_RDWR, 0666);
         }
 
         else if (strcmp(argv[1],"-v") == 0) {
