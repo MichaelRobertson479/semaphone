@@ -16,7 +16,8 @@ int main() {
   printf("gets here\n");
   
   int semd;
-  int v, r;
+  int r;
+  int v;
 
   semd = semget(KEY, 1, 0);
   struct sembuf sb;
@@ -24,16 +25,8 @@ int main() {
   //sb.sem_flg = SEM_UNDO;
   sb.sem_op = -1;
 
-  printf("trying to get in\n");
   semop(semd, &sb, 1);
   printf("got the semaphore!\n");
-  //display last line
-  //printf("Last addition: ");
-
-
-  //write new line
-  printf("Your addition: ");
-  //dup2(file,STDOUT_FILENO);
   sleep(10);
 
   sb.sem_op = 1;
