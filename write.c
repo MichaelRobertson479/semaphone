@@ -8,7 +8,7 @@
 #include <errno.h>
 #include <fcntl.h>
 
-#define KEY 24601
+#define KEY 24602
 
 int main() {
 

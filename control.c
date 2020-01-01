@@ -17,7 +17,7 @@ union semun {
                               (Linux-specific) */
 };
 
-#define KEY 24601
+#define KEY 24602
 #define SEG_SIZE 100
 
 int main (int argc, char *argv[]) {
