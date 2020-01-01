@@ -9,17 +9,27 @@
 
 int main (int argc, char *argv[]) {
 
-    printf("argv0: %s\n",argv[0]);
-    printf("argv1: %s\n",argv[1]);
-
-    if (argc == 0) {
+    if (argc == 1) {
         printf("missing flag\n");
         return 0;
     }
 
     else {
-        if (strcmp(argv[1],"-c")) {
+        if (strcmp(argv[1],"-c") == 0) {
             printf("detects -c\n");
+        }
+
+        else if (strcmp(argv[1],"-v") == 0) {
+            printf("detects -v\n");
+        }
+
+        else if (strcmp(argv[1],"-r") == 0) {
+            printf("detects -r\n");
+        }
+
+        else {
+            printf("invalid flag\n");
+            return 0;
         }
     }
 
