@@ -9,6 +9,9 @@
 
 int main (int argc, char *argv[]) {
 
+    printf("argv0: %s\n",argv[0]);
+    printf("argv1: %s\n",argv[1]);
+
     if (argc == 0) {
         printf("missing flag\n");
         return 0;
