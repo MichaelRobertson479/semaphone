@@ -26,14 +26,14 @@ int main() {
 
   printf("trying to get in\n");
   semop(semd, &sb, 1);
-  
+  printf("got the semaphore!\n");
   //display last line
   //printf("Last addition: ");
 
 
   //write new line
   printf("Your addition: ");
-  dup2(file,STDIN_FILENO);
+  dup2(file,STDOUT_FILENO);
   sleep(10);
 
   sb.sem_op = 1;
